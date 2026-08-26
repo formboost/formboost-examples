@@ -6,28 +6,79 @@ Formboost is a developer-first form backend. Connect your existing forms to Form
 
 ## Examples
 
-| Stack | Repository | Status |
-| --- | --- | --- |
-| HTML | `formboost-html-example` | Planned |
-| React | `formboost-react-example` | Planned |
-| Next.js | `formboost-nextjs-example` | Planned |
-| Vue | `formboost-vue-example` | Planned |
-| Astro | `formboost-astro-example` | Planned |
-| Svelte | `formboost-svelte-example` | Planned |
+All examples live in this repository under [`examples/`](examples/).
 
-Additional examples for webhooks, SDKs, integrations, and other platforms will be added over time.
+| Stack | Example | Type |
+| --- | --- | --- |
+| HTML | [`examples/html`](examples/html) | Native HTML form |
+| JavaScript | [`examples/javascript`](examples/javascript) | Async `fetch` submission |
+| TypeScript | [`examples/typescript`](examples/typescript) | Typed async submission |
+| React | [`examples/react`](examples/react) | React + Vite |
+| Next.js | [`examples/nextjs`](examples/nextjs) | App Router |
+| Vue | [`examples/vue`](examples/vue) | Vue + Vite |
+| Astro | [`examples/astro`](examples/astro) | Astro page |
+| Svelte | [`examples/svelte`](examples/svelte) | Svelte + Vite |
+| Node.js | [`examples/node-webhook`](examples/node-webhook) | Webhook receiver |
+| Express | [`examples/express-webhook`](examples/express-webhook) | Express webhook receiver |
+
+## Quick start
+
+The simplest Formboost integration is a standard HTML form:
+
+```html
+<form action="YOUR_FORMBOOST_ENDPOINT" method="POST">
+  <input type="text" name="name" required />
+  <input type="email" name="email" required />
+  <textarea name="message" required></textarea>
+  <button type="submit">Send message</button>
+</form>
+```
+
+Replace `YOUR_FORMBOOST_ENDPOINT` with the endpoint generated for your form in Formboost.
+
+## Running framework examples
+
+For examples containing a `package.json`:
+
+```bash
+cd examples/react
+npm install
+npm run dev
+```
+
+Use the equivalent folder for Next.js, Vue, Astro, Svelte, or TypeScript.
+
+Where supported, configure the endpoint with the framework-specific public environment variable:
+
+```text
+React / Vue / Svelte / TypeScript: VITE_FORMBOOST_ENDPOINT
+Next.js: NEXT_PUBLIC_FORMBOOST_ENDPOINT
+Astro: PUBLIC_FORMBOOST_ENDPOINT
+```
+
+The examples intentionally fall back to `YOUR_FORMBOOST_ENDPOINT` so no production endpoint, secret, customer data, or credential is committed to this repository.
+
+## Webhook examples
+
+Webhook receiver examples are available for Node.js and Express:
+
+```bash
+cd examples/express-webhook
+npm install
+npm start
+```
+
+They expose:
+
+```text
+POST /webhooks/formboost
+```
+
+The webhook examples demonstrate request handling only. Add the authentication/signature-validation mechanism defined by your Formboost webhook configuration before using the pattern in production.
 
 ## What you can build
 
-These examples focus on the most common Formboost workflow:
-
-1. Create a form in Formboost.
-2. Copy your Formboost submission endpoint.
-3. Connect your existing HTML or framework form.
-4. Submit test data.
-5. Receive and manage submissions in Formboost.
-
-Typical use cases include:
+Typical Formboost use cases include:
 
 - Contact forms
 - Feedback forms
@@ -37,73 +88,37 @@ Typical use cases include:
 - Support forms
 - Registration forms
 
-## Quick example
+## Repository principles
 
-```html
-<form action="YOUR_FORMBOOST_ENDPOINT" method="POST">
-  <label>
-    Name
-    <input type="text" name="name" required />
-  </label>
-
-  <label>
-    Email
-    <input type="email" name="email" required />
-  </label>
-
-  <label>
-    Message
-    <textarea name="message" required></textarea>
-  </label>
-
-  <button type="submit">Send message</button>
-</form>
-```
-
-Replace `YOUR_FORMBOOST_ENDPOINT` with the endpoint generated for your form in Formboost.
-
-## Repository conventions
-
-Each framework-specific repository should be:
+Every example should be:
 
 - Small and easy to understand
-- Runnable locally in a few commands
-- Focused on one clear use case
+- Independently runnable
+- Focused on one clear integration pattern
 - Free of production credentials and customer data
-- Based on the framework's current recommended project structure
-- Documented with setup, configuration, run, and deployment instructions
-
-Examples should use placeholders such as:
-
-```text
-YOUR_FORMBOOST_ENDPOINT
-```
-
-or environment variables when the framework requires them.
+- Based on the framework's recommended project structure
+- Easy to copy into an existing application
 
 Never commit API keys, secrets, production credentials, payment information, or real customer submission data.
 
-## Planned repositories
+## Planned additions
 
-The first wave of official examples:
+Useful next examples include:
 
-```text
-formboost-html-example
-formboost-react-example
-formboost-nextjs-example
-formboost-vue-example
-formboost-astro-example
-formboost-svelte-example
-```
+- Remix
+- Nuxt
+- Angular
+- SolidJS
+- Qwik
+- PHP
+- Laravel
+- Django
+- Flask
+- WordPress
+- Webflow
+- Serverless webhook handlers
 
-Later additions may include:
-
-```text
-formboost-node-webhook-example
-formboost-express-webhook-example
-formboost-typescript-example
-formboost-javascript-example
-```
+These should only be added when they provide a genuinely different integration pattern rather than duplicating existing examples.
 
 ## Contributing
 
