@@ -1,5 +1,5 @@
 export default function Home() {
-  const endpoint = process.env.NEXT_PUBLIC_FORMBOOST_ENDPOINT || 'YOUR_FORMBOOST_ENDPOINT';
+  const endpoint = process.env.NEXT_PUBLIC_FORMBOOST_ENDPOINT || 'https://formboost.app/f/YOUR_ENDPOINT';
   return (
     <main>
       <h1>Contact us</h1>
