@@ -21,12 +21,22 @@ All examples live in this repository under [`examples/`](examples/).
 | Node.js | [`examples/node-webhook`](examples/node-webhook) | Webhook receiver |
 | Express | [`examples/express-webhook`](examples/express-webhook) | Express webhook receiver |
 
+## Formboost endpoint
+
+Formboost submission URLs use this format:
+
+```text
+https://formboost.app/f/YOUR_ENDPOINT
+```
+
+Replace `YOUR_ENDPOINT` with the endpoint identifier generated for your form in Formboost.
+
 ## Quick start
 
 The simplest Formboost integration is a standard HTML form:
 
 ```html
-<form action="YOUR_FORMBOOST_ENDPOINT" method="POST">
+<form action="https://formboost.app/f/YOUR_ENDPOINT" method="POST">
   <input type="text" name="name" required />
   <input type="email" name="email" required />
   <textarea name="message" required></textarea>
@@ -34,7 +44,7 @@ The simplest Formboost integration is a standard HTML form:
 </form>
 ```
 
-Replace `YOUR_FORMBOOST_ENDPOINT` with the endpoint generated for your form in Formboost.
+Create a form at [formboost.app](https://formboost.app), copy its endpoint identifier, and replace `YOUR_ENDPOINT`.
 
 ## Running framework examples
 
@@ -51,12 +61,17 @@ Use the equivalent folder for Next.js, Vue, Astro, Svelte, or TypeScript.
 Where supported, configure the endpoint with the framework-specific public environment variable:
 
 ```text
-React / Vue / Svelte / TypeScript: VITE_FORMBOOST_ENDPOINT
-Next.js: NEXT_PUBLIC_FORMBOOST_ENDPOINT
-Astro: PUBLIC_FORMBOOST_ENDPOINT
+React / Vue / Svelte / TypeScript
+VITE_FORMBOOST_ENDPOINT=https://formboost.app/f/YOUR_ENDPOINT
+
+Next.js
+NEXT_PUBLIC_FORMBOOST_ENDPOINT=https://formboost.app/f/YOUR_ENDPOINT
+
+Astro
+PUBLIC_FORMBOOST_ENDPOINT=https://formboost.app/f/YOUR_ENDPOINT
 ```
 
-The examples intentionally fall back to `YOUR_FORMBOOST_ENDPOINT` so no production endpoint, secret, customer data, or credential is committed to this repository.
+The examples intentionally use `https://formboost.app/f/YOUR_ENDPOINT` as the fallback so developers can immediately see the complete Formboost submission URL while no real endpoint, secret, customer data, or credential is committed to this repository.
 
 ## Webhook examples
 
@@ -98,6 +113,7 @@ Every example should be:
 - Free of production credentials and customer data
 - Based on the framework's recommended project structure
 - Easy to copy into an existing application
+- Explicit about the canonical Formboost submission URL: `https://formboost.app/f/YOUR_ENDPOINT`
 
 Never commit API keys, secrets, production credentials, payment information, or real customer submission data.
 
