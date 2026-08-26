@@ -4,7 +4,7 @@ import './style.css';
 createApp({
   data() {
     return {
-      endpoint: import.meta.env.VITE_FORMBOOST_ENDPOINT || 'YOUR_FORMBOOST_ENDPOINT'
+      endpoint: import.meta.env.VITE_FORMBOOST_ENDPOINT || 'https://formboost.app/f/YOUR_ENDPOINT'
     };
   },
   template: `
