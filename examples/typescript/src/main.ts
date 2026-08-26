@@ -1,4 +1,4 @@
-const endpoint = import.meta.env.VITE_FORMBOOST_ENDPOINT || 'YOUR_FORMBOOST_ENDPOINT';
+const endpoint = import.meta.env.VITE_FORMBOOST_ENDPOINT || 'https://formboost.app/f/YOUR_ENDPOINT';
 const form = document.querySelector<HTMLFormElement>('#contact-form');
 const status = document.querySelector<HTMLParagraphElement>('#status');
 
