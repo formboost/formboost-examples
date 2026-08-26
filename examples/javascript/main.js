@@ -1,4 +1,4 @@
-const FORMBOOST_ENDPOINT = 'YOUR_FORMBOOST_ENDPOINT';
+const FORMBOOST_ENDPOINT = 'https://formboost.app/f/YOUR_ENDPOINT';
 const form = document.querySelector('#contact-form');
 const status = document.querySelector('#status');
 
