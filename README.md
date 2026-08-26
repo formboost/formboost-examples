@@ -143,7 +143,7 @@ Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for repository
 ## Links
 
 - Website: https://formboost.app
-- Documentation: https://docs.formboost.app
+- Documentation: https://formboost.app/docs
 - GitHub organization: https://github.com/formboost
 
 ## License
