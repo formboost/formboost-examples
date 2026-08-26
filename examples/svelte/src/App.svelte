@@ -1,5 +1,5 @@
 <script>
-  const endpoint = import.meta.env.VITE_FORMBOOST_ENDPOINT || 'YOUR_FORMBOOST_ENDPOINT';
+  const endpoint = import.meta.env.VITE_FORMBOOST_ENDPOINT || 'https://formboost.app/f/YOUR_ENDPOINT';
 </script>
 
 <main>
